@@ -30,6 +30,10 @@ Windows 10/11，使用系统自带的 .NET Framework 4.8 与音频解码器。
 
 源码与素材
 原项目作者：Ganzhe2028；来源与素材声明详见 NOTICE.md 和 licenses。
+好事项目的初版来源还包括 yuhanfu513-ops/FengGe-Desktop-Pet。
+Windows 移植的代码编写、调试、测试、打包和文档整理均由 GPT（通过 Codex）根据维护者 sanzhu8923 的需求完成。
+原头像、原声、原项目创意和上游代码并非 GPT 创作，也不属于本仓库原创。
+本项目为三个上游项目合并的独立非官方 Windows 移植，不是 GitHub Fork 网络中的单一上游分叉，不表示原作者认可。
 头像与 76 段语音来自原仓库，没有重新生成或克隆声音。
 其中 28 段 AAC 为兼容 Windows 解码为 PCM WAV，保留原 M4A 文件。
 移植源码在 windows-meme-pets\src 中；重新编译使用 build.ps1，构建转换音频需要 Python 与 imageio-ffmpeg，运行桌宠不需要。

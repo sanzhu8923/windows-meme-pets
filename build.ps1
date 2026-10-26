@@ -25,9 +25,12 @@ foreach($pair in @(@('SunPet','SunPet'),@('ShaolanPet','ShaolanPet'),@('GoodThin
  $legal=Join-Path $release "licenses\$($pair[0])"
  New-Item -ItemType Directory -Path $legal -Force | Out-Null
  foreach($name in @('LICENSE','NOTICE.md')) { Copy-Item -LiteralPath (Join-Path $originals "$($pair[1])\$name") -Destination $legal -Force }
+ $thirdParty=Join-Path $originals "$($pair[1])\licenses"
+ if(Test-Path -LiteralPath $thirdParty) { Copy-Item -LiteralPath $thirdParty -Destination $legal -Recurse -Force }
 }
 python (Join-Path $project 'tools\prepare_audio.py') $release
 if($LASTEXITCODE -ne 0){throw 'Audio preparation failed'}
 Copy-Item -LiteralPath (Join-Path $project '使用说明.txt') -Destination $release -Force
 Copy-Item -LiteralPath (Join-Path $project 'NOTICE.md') -Destination $release -Force
+foreach($name in @('README.md','CHANGELOG.md','LICENSE')) { Copy-Item -LiteralPath (Join-Path $project $name) -Destination $release -Force }
 Write-Output "BUILD OK: $release"
