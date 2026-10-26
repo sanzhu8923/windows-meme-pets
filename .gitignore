@@ -1,0 +1,13 @@
+release/
+tmp/
+__pycache__/
+*.pyc
+tests/*.exe
+tests/session-*/
+tests/final-session/
+*.log
+*.tmp
+.venv/
+build-tools/
+docs/progress.md
+docs/plan.md
